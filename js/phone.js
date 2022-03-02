@@ -64,20 +64,22 @@ const displayPhoneDetail = mobile => {
     <img src="${mobile.image}" class="card-img-top w-50 mx-auto" alt="...">
     <div class="card-body">
     <h4 class="text-center"><em><u> Specifiations </u></em></h4> <br>
-        <p class="card-text">Brand : ${mobile.brand}</p>
-        <p class="card-text">Phone Name : ${mobile.name}</p>
-        <p class="card-text">Storage : ${mobile.mainFeatures.storage}</p>
-        <p class="card-text">Display Size : ${mobile.mainFeatures.displaySize}</p>
-        <p class="card-text">Chip Set : ${mobile.mainFeatures.chipSet}</p>
-        <p class="card-text">Release Date : ${mobile.releaseDate}</p> <br>
-
-        <p class="card-text">WLAN : ${mobile.others.WLAN}</p>
-        <p class="card-text">Bluetooth : ${mobile.others.Bluetooth}</p>
-        <p class="card-text">GPS: ${mobile.others.GPS}</p>
-        <p class="card-text">NFC : ${mobile.others.NFC}</p>
-        <p class="card-text">Radio : ${mobile.others.Radio}</p>
-        <p class="card-text">USB : ${mobile.others.USB}</p>
+        <p class="card-text"><b>Brand : </b>${mobile.brand}</p>
+        <p class="card-text"><b>Phone Name : </b>${mobile.name}</p>
+        <p class="card-text"><b>Storage : </b>${mobile.mainFeatures.storage}</p>
+        <p class="card-text"><b>Display Size : </b>${mobile.mainFeatures.displaySize}</p>
+        <p class="card-text"><b>Chip Set : </b>${mobile.mainFeatures.chipSet}</p>
+        <p class="card-text"><b>Release Date : </b>${mobile.releaseDate}</p>
+        <p class="card-text"><b>WLAN : </b>${mobile.others.WLAN}</p>
+        <p class="card-text"><b>Bluetooth : </b>${mobile.others.Bluetooth}</p>
+        <p class="card-text"><b>GPS: </b>${mobile.others.GPS}</p>
+        <p class="card-text"><b>NFC : </b>${mobile.others.NFC}</p>
+        <p class="card-text"><b>Radio : </b>${mobile.others.Radio}</p>
+        <p class="card-text"><b>USB : </b>${mobile.others.USB}</p>
+        <p class="card-text" id="remove-sensor"><b>Sensors : </b>${mobile.mainFeatures.sensors}</p>
     </div>
     `;
     phoneDetails.appendChild(div);
 }
+
+
