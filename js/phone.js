@@ -6,7 +6,8 @@ const searchPhone = () => {
     searchField.value = '';
     document.getElementById('error-message').style.display = 'none';
     if (searchText == '') {
-        // please write something to display
+        document.getElementById('error-message').style.display = 'block';
+        
     }
     else {
         // load data
@@ -27,7 +28,7 @@ const displaySearchResult = phones => {
     searchResult.textContent = '';
     phoneDetails.textContent = "";
     if (phones.length == 0) {
-        // show no result found;
+        innerHTML = error-message();
     }
     phones.forEach(mobile => {
         innerhtml = `${mobile}`;
@@ -35,8 +36,8 @@ const displaySearchResult = phones => {
         div.classList.add('col');
         div.innerHTML = `
         <div class="card h-100 w-80 mx-auto">
-            <img src="${mobile.image}" class="card-img-top w-50 mx-auto mt-3" alt="..." >
-            <div class="card-body">
+            <img src="${mobile.image}" class="card-img-top w-50 mx-auto my-3" alt="..." >
+            <div class="card-body bg-opacity-10 bg-primary">
                 <p class="card-title"><b>Phone Name : </b> ${mobile.phone_name}</p>
                 <p class="card-text"><b>Brand : </b> ${mobile.brand}</p>
             <button onclick="loadPhoneDetail('${mobile.slug}')" class="btn btn-primary" type="button"
@@ -44,7 +45,7 @@ const displaySearchResult = phones => {
             </div>
         </div>
         `;
-        searchResult.appendChild(div);
+        searchResult.appendChild(div); 
     })
 }
 
@@ -62,8 +63,8 @@ const displayPhoneDetail = mobile => {
     phoneDetails.textContent = "";
     div.classList.add('card');
     div.innerHTML = `
-    <img src="${mobile.image}" class="card-img-top w-50 mx-auto mt-3" alt="...">
-    <div class="card-body">
+    <img src="${mobile.image}" class="card-img-top w-50 mx-auto my-3" alt="...">
+    <div class="card-body bg-opacity-10 bg-primary">
     <h4 class="text-center"><em><u> Specifiations </u></em></h4> <br>
         <p class="card-text"><b>Brand : </b>${mobile.brand}</p>
         <p class="card-text"><b>Phone Name : </b>${mobile.name}</p>
@@ -82,5 +83,3 @@ const displayPhoneDetail = mobile => {
     `;
     phoneDetails.appendChild(div);
 }
-
-
