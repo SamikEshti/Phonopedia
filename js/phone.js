@@ -6,6 +6,9 @@ const searchPhone = () => {
     searchField.value = '';
     document.getElementById('error-message').style.display = 'none';
     if (searchText == '') {
+        const searchResult = document.getElementById('search-result');
+        searchResult.textContent = '';
+        phoneDetails.textContent = "";
         document.getElementById('error-message').style.display = 'block';
         
     }
@@ -24,10 +27,13 @@ const displayError = error => {
 }
 
 const displaySearchResult = phones => {
+    const phoneDetails = document.getElementById('phoneDetails');
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
     phoneDetails.textContent = "";
     if (phones.length == 0) {
+        const searchResult = document.getElementById('search-result');
+        searchResult.textContent = '';
         innerHTML = error-message();
     }
     phones.forEach(mobile => {
