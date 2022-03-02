@@ -35,10 +35,10 @@ const displaySearchResult = phones => {
         div.classList.add('col');
         div.innerHTML = `
         <div class="card h-100">
-            <img src="${mobile.image}" class="card-img-top w-50 mx-auto" alt="..." >
+            <img src="${mobile.image}" class="card-img-top w-50 mx-auto mt-3" alt="..." >
             <div class="card-body">
-                <h5 class="card-title">${mobile.phone_name}</h5>
-                <p class="card-text">${mobile.brand}</p>
+                <p class="card-title"><b>Phone Name : </b> ${mobile.phone_name}</p>
+                <p class="card-text"><b>Brand : </b> ${mobile.brand}</p>
             <button onclick="loadPhoneDetail('${mobile.slug}')" class="btn btn-primary" type="button"
             id="detail">detail</button>
             </div>
@@ -62,7 +62,7 @@ const displayPhoneDetail = mobile => {
     phoneDetails.textContent = "";
     div.classList.add('card');
     div.innerHTML = `
-    <img src="${mobile.image}" class="card-img-top w-50 mx-auto" alt="...">
+    <img src="${mobile.image}" class="card-img-top w-50 mx-auto mt-3" alt="...">
     <div class="card-body">
     <h4 class="text-center"><em><u> Specifiations </u></em></h4> <br>
         <p class="card-text"><b>Brand : </b>${mobile.brand}</p>
