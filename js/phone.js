@@ -34,11 +34,13 @@ const displaySearchResult = phones => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-        <div onclick="loadMealDetail(${data.brand})" class="card h-100">
-            <img src="${data.image}" class="card-img-top" alt="...">
+        <div class="card h-100">
+            <img src="${mobile.image}" class="card-img-top w-50 mx-auto" alt="..." >
             <div class="card-body">
-                <h5 class="card-title">${data.phone_name}</h5>
-                <p class="card-text">${data.slug}</p>
+                <h5 class="card-title">${mobile.phone_name}</h5>
+                <p class="card-text">${mobile.brand}</p>
+                <button onclick="loadPhoneDetail('${mobile.brand}')" class="btn btn-primary" type="button"
+            id="detail">detail</button>
             </div>
         </div>
         `;
@@ -47,22 +49,21 @@ const displaySearchResult = phones => {
 }
 
 const loadPhoneDetail = phoneId => {
-    const url = `https://openapi.programming-hero.com/api/phone/${slug}`;
+    const url = `https://openapi.programming-hero.com/api/phone/${phoneId}`;
     fetch(url)
         .then(res => res.json())
-        .then(data => displayPhoneDetail(data.phones[1]));
+        .then(data => displayPhoneDetail(data.data));
 }
 
 const displayPhoneDetail = mobile => {
     console.log(mobile);
-    console.log()
     const phoneDetails = document.getElementById('phoneDetails');
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML = `
-    <img src="${data.image}" class="card-img-top" alt="...">
+    <img src="${mobile.image}" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="card-title">${data.brand}</h5>
+        <h5 class="card-title">${mobile.brand}</h5>
         <p class="card-text">${mobile.slug}</p>
     </div>
     `;
