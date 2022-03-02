@@ -13,7 +13,7 @@ const searchPhone = () => {
         const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
         fetch(url)
             .then(res => res.json())
-            .then(data => displaySearchResult(data.data))
+            .then(data => displaySearchResult(data.data.slice(0,20)))
             .catch(error => displayError(error));
     }
 }
@@ -25,22 +25,22 @@ const displayError = error => {
 const displaySearchResult = phones => {
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
+    phoneDetails.textContent = "";
     if (phones.length == 0) {
         // show no result found;
     }
     phones.forEach(mobile => {
-        console.log(mobile);
         innerhtml = `${mobile}`;
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-        <div class="card h-100">
+        <div class="card h-100 w-80 mx-auto">
             <img src="${mobile.image}" class="card-img-top w-50 mx-auto mt-3" alt="..." >
             <div class="card-body">
                 <p class="card-title"><b>Phone Name : </b> ${mobile.phone_name}</p>
                 <p class="card-text"><b>Brand : </b> ${mobile.brand}</p>
             <button onclick="loadPhoneDetail('${mobile.slug}')" class="btn btn-primary" type="button"
-            id="detail">detail</button>
+            id="detail">Details</button>
             </div>
         </div>
         `;
