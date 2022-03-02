@@ -59,6 +59,7 @@ const displayPhoneDetail = mobile => {
     console.log(mobile);
     const phoneDetails = document.getElementById('phoneDetails');
     const div = document.createElement('div');
+    phoneDetails.textContent = "";
     div.classList.add('card');
     div.innerHTML = `
     <img src="${mobile.image}" class="card-img-top w-50 mx-auto" alt="...">
@@ -76,7 +77,7 @@ const displayPhoneDetail = mobile => {
         <p class="card-text"><b>NFC : </b>${mobile.others.NFC}</p>
         <p class="card-text"><b>Radio : </b>${mobile.others.Radio}</p>
         <p class="card-text"><b>USB : </b>${mobile.others.USB}</p>
-        <p class="card-text" id="remove-sensor"><b>Sensors : </b>${mobile.mainFeatures.sensors}</p>
+        <p class="card-text"><b>Sensors : </b>${mobile.mainFeatures.sensors}</p>
     </div>
     `;
     phoneDetails.appendChild(div);
